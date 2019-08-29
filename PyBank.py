@@ -42,12 +42,30 @@ with open(filepath) as csv_file:
        # print(greatest_current_loss)
    print('Financial Analysis')
 print('----------------------------')
+with open("PyBank text Result.txt", "a") as myfile:
+   myfile.write("Financial Analysis\n")
+with open("PyBank text Result.txt", "a") as myfile:
+   myfile.write("---------------------\n")
 #Net Total Profit
 print("Net Total Profit: $",sum)
+with open("PyBank text Result.txt", "a") as myfile:
+   text = "Net Total Profit: $" + str(sum) + "\n"
+   myfile.write(text)
 #Total number of months
 print("Total number of months: ",count)
-#Average Profit
-# print("Average Profit: $",(sum/count))
+with open("PyBank text Result.txt", "a") as myfile: 
+   text = "Total number of months: $" + str(count) + "\n"
+   myfile.write(text)
+
 print("Average Change: $",sum1/len(net_change))
+with open("PyBank text Result.txt", "a") as myfile:
+   text = "Average Change: $" + str(sum1/len(net_change)) + "\n"
+   myfile.write(text)
 print ("Greatest Increase in Profits:", (greatest_increase_month) ,"$", (greatest_current_gain))
+with open("PyBank text Result.txt", "a") as myfile:
+   text = "Greatest Increase in Profits:"  + str((greatest_increase_month)) +   "$"   + str((greatest_current_gain)) + "\n"
+   myfile.write(text)
 print ("Greatest Decrease in Profits:", (greatest_decrease_month) ,"$", (greatest_current_loss))
+with open("PyBank text Result.txt", "a") as myfile:
+   text = "Greatest Decerese in Profits:" + str((greatest_decrease_month)) +   "$"   + str((greatest_current_loss)) + "\n"
+   myfile.write(text)

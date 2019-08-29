@@ -44,3 +44,16 @@ for person, vote_count in candidate_votes.items():
 print(dashbreak)
 print(f"Winner: {winner}")
 print(dashbreak)
+
+# save summary to txt
+save_file = filename.strip(".csv") + "_results.txt"
+filepath = os.path.join(".", save_file)
+with open(filepath,'w') as text:
+    text.write(dashbreak + "\n")
+    text.write(f"Total Votes: {total_votes}" + "\n")
+    text.write(dashbreak + "\n")
+    for person, vote_count in candidate_votes.items():
+        text.write(f"{person}: {candidate_percentages[person]} ({vote_count})" + "\n")
+    text.write(dashbreak + "\n")
+    text.write(f"Winner: {winner}" + "\n")
+    text.write(dashbreak + "\n")
